@@ -1,19 +1,21 @@
 import requests
 import threading
-
+from pystyle import Colors, Colorate
 
 RED = '\033[31m'
 GREEN = '\033[32m'
 RESET = '\033[0m'
 BLUE = '\033[96m'
-print(f'''{BLUE}
- _______           ________      .____            
- \      \   ____  /  _____/ __ __|    |   _____   
- /   |   \_/ __ \/   \  ___|  |  \    |   \__  \  
-/    |    \  ___/\    \_\  \  |  /    |___ / __ \_
-\____|__  /\___  >\______  /____/|_______ (____  /
-        \/     \/        \/              \/    \/ 
-{RESET}''')
+
+title = '''
+ _ _                 _      
+| \ | ___  ___  _ _ | | ___ 
+|   |/ ._>/ . || | || |<_> |
+|_\_|\___.\_. |`___||_|<___|
+          <___'             
+
+'''
+print(Colorate.Horizontal(Colors.purple_to_blue, str(title), 1))
 
 url = 'https://ngl.link/api/submit'
 
@@ -62,3 +64,4 @@ for thread in threads:
     thread.join()
 total = requests_per_thread * num_threads
 print(f"{GREEN}Done. Sent: {RESET}" + str(total) + " Questions.")
+input("")
