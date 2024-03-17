@@ -32,7 +32,7 @@ headers = {
 
 data = {
     'username': '',
-    'question': 'https://tinyurl.com/trolledlol123\nhttps://tinyurl.com/trolledlol123\nhttps://tinyurl.com/trolledlol123',
+    'question': '',
     'deviceId': 'dc8d5332-7411-41ad-a6a3-4b4f7ebe8ec0',
     'gameSlug': '',
     'referrer': ''
@@ -47,7 +47,7 @@ print("Updated data:", data)
 def send_post_request(thread_id, num_requests):
     for i in range(num_requests):
         response = requests.post(url, headers=headers, data=data)
-        print(f"{RED}Thread {GREEN}[{thread_id}]{RED}: Request{GREEN}[{i+1}]{RED}, Response Code: {response.status_code}{RESET}")
+        print(f"{RED}Thread {GREEN}[{thread_id}]{RED}: Request{GREEN}[{i+1}]{RED}, Response Code: {response.status_code}{RESET} \n")
 
 
 
@@ -60,6 +60,5 @@ for i in range(num_threads):
 
 for thread in threads:
     thread.join()
-
-print(f"{GREEN}Done.{RESET}")
-
+total = requests_per_thread * num_threads
+print(f"{GREEN}Done. Sent: {RESET}" + str(total) + " Questions.")
