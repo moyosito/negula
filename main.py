@@ -28,7 +28,7 @@ headers = {
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36',
     'Origin': 'https://ngl.link',
-    'Referer': 'https://ngl.link/pep0n._mp0112',
+    'Referer': 'https://ngl.link/',
     'X-Requested-With': 'XMLHttpRequest',
 }
 
